@@ -30,7 +30,7 @@ Before you begin, ensure you have installed:
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
+git clone https://github.com/rr-26/mantra.ai.git
 cd manga-reader
 ```
 
@@ -70,7 +70,7 @@ npm run preview
 ## Project Structure
 
 ```
-manga-reader/
+mantra/
 ├── src/
 │   ├── components/
 │   │   ├── BookList.tsx
@@ -119,13 +119,6 @@ The application integrates with a backend API with the following endpoints:
 The application uses environment variables for configuration:
 - `VITE_API_URL`: API base URL
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## Error Handling
 
@@ -147,7 +140,3 @@ The application includes comprehensive error handling for:
 - Add user preferences storage
 - Improve mobile touch gestures
 - Add keyboard navigation support
-
-## License
-
-[Your chosen license]
