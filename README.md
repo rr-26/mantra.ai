@@ -1,50 +1,153 @@
-# React + TypeScript + Vite
+# Manga Reader Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for reading manga online, built with React, TypeScript, and Vite. The application features a clean, responsive interface with support for multiple books and chapters.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse multiple manga books
+- Chapter navigation
+- Page-by-page reading
+- Responsive design
+- Touch/click navigation
+- Automatic chapter progression
+- Book list and chapter selection
 
-## Expanding the ESLint configuration
+## Technology Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- REST API Integration
 
-- Configure the top-level `parserOptions` property like this:
+## Prerequisites
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Before you begin, ensure you have installed:
+- Node.js (v16 or higher)
+- npm (v7 or higher)
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone [your-repository-url]
+cd manga-reader
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+2. Install dependencies:
+```bash
+npm install
 ```
+
+3. Create environment files:
+
+Create a `.env` file in the root directory:
+```env
+VITE_API_URL=http://52.195.171.228:8080
+```
+
+## Development
+
+To start the development server:
+```bash
+npm run dev
+```
+
+The application will start on port 3000: [http://localhost:3000](http://localhost:3000)
+
+## Building for Production
+
+To create a production build:
+```bash
+npm run build
+```
+
+To preview the production build:
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```
+manga-reader/
+├── src/
+│   ├── components/
+│   │   ├── BookList.tsx
+│   │   ├── ChapterList.tsx
+│   │   └── MangaViewer.tsx
+│   ├── services/
+│   │   └── api.ts
+│   ├── config/
+│   │   └── environment.ts
+│   ├── types/
+│   │   └── index.ts
+│   └── App.tsx
+├── public/
+├── index.html
+└── vite.config.ts
+```
+
+## API Integration
+
+The application integrates with a backend API with the following endpoints:
+
+- `/books/` - Get all available books
+- `/books/{id}/` - Get specific book details
+- `/chapters/{id}/` - Get chapter details and pages
+
+## Component Overview
+
+### BookList
+- Displays available manga books
+- Handles book selection
+- Shows currently selected book
+
+### ChapterList
+- Shows available chapters for selected book
+- Handles chapter navigation
+- Indicates current chapter
+
+### MangaViewer
+- Displays manga pages
+- Handles page navigation
+- Supports next/previous page navigation
+- Automatic chapter progression
+
+## Configuration
+
+The application uses environment variables for configuration:
+- `VITE_API_URL`: API base URL
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## Error Handling
+
+The application includes comprehensive error handling for:
+- Failed API requests
+- Network issues
+- Loading states
+- Invalid data
+
+## Known Issues
+
+- Images may take time to load depending on network speed
+- API rate limiting may affect performance
+
+## Future Improvements
+
+- Add image preloading for smoother page transitions
+- Implement offline support
+- Add user preferences storage
+- Improve mobile touch gestures
+- Add keyboard navigation support
+
+## License
+
+[Your chosen license]
